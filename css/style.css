@@ -32,18 +32,22 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100%;
 }
 
-/* TODO: switch to min-height when page content grows beyond 100vh */
 body {
   font-family: var(--font);
   background: var(--bg);
   color: var(--text);
   line-height: 1.7;
-  height: 100%;
+}
+
+/* TODO: switch to min-height when page-home expands beyond 100vh */
+body.page-home {
   display: flex;
   flex-direction: column;
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
 }
 
 /* ── Layout ── */
@@ -55,13 +59,16 @@ body {
   padding: 0 1.5rem;
 }
 
-/* TODO: expand beyond 100vh when page content grows */
 main {
+  padding: 2rem 0 4rem;
+}
+
+/* TODO: update when page-home expands beyond 100vh */
+.page-home main {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem 0 4rem;
   min-height: 0;
 }
 
@@ -72,7 +79,10 @@ main {
   justify-content: center;
   align-items: center;
   padding: 3rem 0;
-  /* TODO: remove height constraint when page expands beyond 100vh */
+}
+
+/* TODO: remove when page-home expands beyond 100vh */
+.page-home .splash {
   flex: 1;
   min-height: 0;
 }
