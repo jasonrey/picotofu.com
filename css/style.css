@@ -96,12 +96,30 @@ main {
   line-height: 1.7;
 }
 
+@keyframes wiggle {
+  0%   { transform: rotate(0deg); }
+  /* pause at start */
+  20%  { transform: rotate(0deg); }
+  /* tilt right */
+  25%  { transform: rotate(3deg); }
+  /* tilt left */
+  35%  { transform: rotate(-2deg); }
+  /* settle right */
+  42%  { transform: rotate(1deg); }
+  /* settle back */
+  48%  { transform: rotate(0deg); }
+  /* long pause before next loop */
+  100% { transform: rotate(0deg); }
+}
+
 .splash img {
   /* TODO: remove size constraints when page expands beyond 100vh */
   width: clamp(220px, 40vh, 320px);
   height: auto;
   display: block;
   object-fit: contain;
+  animation: wiggle 2s ease-in-out infinite;
+  transform-origin: center center;
 }
 
 /* ── Header ── */
