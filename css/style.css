@@ -487,6 +487,6 @@ footer .container {
   footer .container {
     flex-direction: column;
     gap: 0.75rem;
-    align-items: flex-start;
+    align-items: flex-end;
   }
 }
