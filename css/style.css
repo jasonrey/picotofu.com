@@ -34,12 +34,15 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* TODO: switch to min-height when page content grows beyond 100vh */
 body {
   font-family: var(--font);
   background: var(--bg);
   color: var(--text);
   line-height: 1.7;
-  min-height: 100dvh;
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -53,19 +56,40 @@ body {
   padding: 0 1.5rem;
 }
 
+/* TODO: expand beyond 100vh when page content grows */
 main {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 2rem 0 4rem;
+  overflow: hidden;
+}
+
+/* ── Splash ── */
+
+.splash {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+  /* TODO: remove height constraint when page expands beyond 100vh */
+  flex: 1;
+  min-height: 0;
+}
+
+.splash img {
+  /* TODO: remove size constraints when page expands beyond 100vh */
+  width: clamp(180px, 28vmin, 300px);
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 
 /* ── Header ── */
 
 header {
   padding: 1.75rem 0;
-  border-bottom: 1px solid var(--border);
 }
 
 header .container {
@@ -204,7 +228,6 @@ nav a:hover {
 
 .legal-header {
   padding: 4rem 0 2.5rem;
-  border-bottom: 1px solid var(--border);
   margin-bottom: 3rem;
 }
 
@@ -276,7 +299,6 @@ nav a:hover {
 
 footer {
   padding: 2rem 0;
-  border-top: 1px solid var(--border);
 }
 
 footer .container {
