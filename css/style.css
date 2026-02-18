@@ -60,16 +60,19 @@ body.page-home {
 }
 
 main {
-  padding: 2rem 0 4rem;
+  padding: 0;
 }
 
 /* TODO: update when page-home expands beyond 100vh */
 .page-home main {
   flex: 1;
+  min-height: 0;
+}
+
+.page-home main .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  min-height: 0;
+  height: 100%;
 }
 
 /* ── Splash ── */
@@ -120,6 +123,112 @@ main {
   object-fit: contain;
   animation: wiggle 2s ease-in-out infinite;
   transform-origin: center center;
+}
+
+/* ── Apps row ── */
+
+.apps {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.app-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.app-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.app-item:hover .app-icon {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.app-name {
+  font-size: 0.72rem;
+  color: var(--text-subtle);
+  letter-spacing: 0.02em;
+}
+
+/* ── Product page ── */
+
+.product-header {
+  padding: 0 0 3rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.product-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+.product-header-text h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+
+.product-header-text p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+
+.product-body {
+  padding-bottom: 0;
+}
+
+.product-body p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.product-links {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.product-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.4rem 0.85rem;
+  letter-spacing: 0.02em;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.product-link:hover {
+  color: var(--text);
+  border-color: var(--accent);
 }
 
 /* ── Header ── */
