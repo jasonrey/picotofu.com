@@ -1,0 +1,326 @@
+/* ─────────────────────────────────────────
+   picotofu.com — stylesheet
+   monochromatic · soft white · minimal
+───────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:          #faf9f7;
+  --surface:     #f2f0ec;
+  --border:      #e5e2dc;
+  --text:        #3d3a36;
+  --text-muted:  #9a9590;
+  --text-subtle: #c2bdb7;
+  --accent:      #b5a99a;
+  --link:        #7a6f65;
+
+  --font: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --max-w: 680px;
+  --gap: 2rem;
+}
+
+/* ── Base ── */
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Layout ── */
+
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 0 4rem;
+}
+
+/* ── Header ── */
+
+header {
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--text-muted);
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+nav a {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+nav a:hover {
+  color: var(--text);
+}
+
+/* ── Hero ── */
+
+.hero {
+  padding: 5rem 0 4rem;
+}
+
+.hero-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  margin-bottom: 1.25rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.hero-desc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 480px;
+  line-height: 1.75;
+}
+
+/* ── Divider ── */
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 3rem 0;
+}
+
+/* ── About / Info block ── */
+
+.info-grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.info-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  margin-bottom: 0.4rem;
+}
+
+.info-value {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.info-value a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.info-value a:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+/* ── Tags ── */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.tag {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.2rem 0.6rem;
+  letter-spacing: 0.02em;
+}
+
+/* ── Legal pages ── */
+
+.legal-header {
+  padding: 4rem 0 2.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 3rem;
+}
+
+.legal-header h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.legal-header .updated {
+  font-size: 0.82rem;
+  color: var(--text-subtle);
+}
+
+.legal-content {
+  padding-bottom: 5rem;
+}
+
+.legal-content h2 {
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  margin: 2.5rem 0 0.75rem;
+}
+
+.legal-content p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.legal-content a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+}
+
+.legal-content a:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.legal-content ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.legal-content ul li {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.legal-content ul li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--text-subtle);
+}
+
+/* ── Footer ── */
+
+footer {
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
+}
+
+footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-copy {
+  font-size: 0.78rem;
+  color: var(--text-subtle);
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.footer-links a {
+  font-size: 0.78rem;
+  color: var(--text-subtle);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.footer-links a:hover {
+  color: var(--text-muted);
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 480px) {
+  :root {
+    --gap: 1.25rem;
+  }
+
+  .hero {
+    padding: 3rem 0 2.5rem;
+  }
+
+  footer .container {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+}
